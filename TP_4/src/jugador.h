@@ -56,6 +56,9 @@ eJugador* jugador_newParametrosChar(char* idStr, char* nombreStr, char* posicion
  */
 
 void jugador_delete(eJugador* this);
+
+int destroyJugador(eJugador* jugador);
+
 /*
  * \brief copia el valor introducido del id y lo copia al array
  * \param puntero array en el guardamos los ids
@@ -131,6 +134,10 @@ int jugador_getAltura(eJugador* this, float* altura);
  */
 
 int mostrarJugador(eJugador* jugador);
+
+
+int mostrarJugadores(LinkedList* pArrayListaDeJugadores);
+
 
 /** \brief Genera el proximo id del jugador a partir de la busqueda del ultimo id generado
  * y se lo asgina al nuevo jugador creado

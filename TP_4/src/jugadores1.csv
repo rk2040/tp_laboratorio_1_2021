@@ -1,12 +1,11 @@
 id,nombre,posicion,edad,altura
-1,stephen curry,armador,33,1.88
-2,kevin durant,alapivot,33,2.08
-3,giannis antetoko,alapivot,26,2.11
-4,zach lavine,escolta,25,1.96
-5,demar derozan,alero,32,1.98
-6,nikola jovic,centro,27,2.10
-7,paul george,escolta,31,2.03
-8,ja morant,armador,22,1.91
-9,trae young,armador,23,1.85
-10,lebron james,36,alero,2.06
-
+1,curry,armador,33,1.88
+2,durant,alapivot,33,2.08
+3,antetoko,alapivot,26,2.11
+4,lavine,escolta,25,1.96
+5, derozan,alero,32,1.98
+6,jovic,centro,27,2.10
+7,george,escolta,31,2.03
+8,morant,armador,22,1.91
+9,young,armador,23,1.85
+10,lebron,alero,36,2.06

@@ -5085,11 +5085,12 @@
 	<stdlib.h>
 	<string.h>
 
-1637458769 source:d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\main.c
+1637725231 source:d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"jugador.h"
+	"parser.h"
 	"../testing/inc/main_test.h"
 	"../inc/LinkedList.h"
 
@@ -5110,13 +5111,22 @@
 
 1637455158 d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\utn.h
 
-1637456079 source:d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\jugador.c
+1637529310 source:d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\jugador.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	<ctype.h>
 	"jugador.h"
 
-1637456861 d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\jugador.h
+1637529308 d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\jugador.h
 	"../inc/LinkedList.h"
+
+1637524315 source:d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"../inc/LinkedList.h"
+	"jugador.h"
+	"parser.h"
+
+1637521316 d:\utn\prog i  lab i\ejercicios de clases classroom\tp_4\src\parser.h
 

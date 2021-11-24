@@ -12,7 +12,7 @@ eJugador* jugador_new()
 
     eJugador* nuevoJugador;
 
-    nuevoJugador = (eJugador*) malloc(sizeof(eJugador));
+    nuevoJugador = (eJugador*) malloc(sizeof(eJugador));    // Asigno memoria para el nuevo jugador
 
     return nuevoJugador;
 }
@@ -32,6 +32,7 @@ eJugador* jugador_newParametrosChar(char* idStr, char* nombreStr, char* posicion
 			jugador_setAltura(nuevoJugador, atof(alturaStr)) == 1 )
         {
             jugador_delete(nuevoJugador);
+            nuevoJugador = NULL;
         }
     }
     return nuevoJugador;
@@ -90,12 +91,23 @@ void jugador_delete(eJugador* this)
     free(this);
 }
 
+int destroyJugador(eJugador* jugador)
+{
+    int error = 1;
+    if(jugador != NULL)
+    {
+        free(jugador);
+        error = 0;
+    }
+    return error;
+}
+
 
 int mostrarJugador(eJugador* jugador)
 {
     int error = 0;
     int id;
-    char nombre[NOMBRE];
+    char nombre[20];
     char posicion[20];
     int edad;
     float altura;;
@@ -111,6 +123,44 @@ int mostrarJugador(eJugador* jugador)
         {
             printf("%2d        %10s        %10s         %2d                %.2f\n", id, nombre, posicion, edad, altura);
             error = 1;
+        }
+    }
+
+    return error;
+}
+
+
+int mostrarJugadores(LinkedList* pArrayListaDeJugadores)
+{
+    int error = 1;
+    eJugador* auxJugador = NULL;
+    int id;
+    char nombre[20];
+    char posicion[20];
+    int edad;
+    float altura;
+    int tam;
+
+    tam = ll_len(pArrayListaDeJugadores);
+
+    if(pArrayListaDeJugadores != NULL)
+    {
+        printf("        Lista de Jugadores      \n");
+        printf("Id      Nombre      Posicion        Edad    Altura \n");
+
+        for(int i=0; i<tam; i++)
+        {
+            auxJugador = ll_get(pArrayListaDeJugadores, i); // recorro la lista y voy tomando jugador por jugador
+           /*
+            if(auxJugador != NULL &&
+               jugador_getId(auxJugador, &id) &&
+               jugador_getNombre(auxJugador, nombre) &&
+               jugador_getPosicion(auxJugador, posicion) &&
+               jugador_getEdad(auxJugador, &edad) &&
+               jugador_getAltura(auxJugador, &altura) )
+            {
+            }*/
+                mostrarJugador(auxJugador);
         }
     }
 
@@ -150,7 +200,7 @@ int jugador_setNombre(eJugador* this, char* nombre)
 
     if(this != NULL && strlen(nombre)>0 && strlen(nombre)<128)
     {
-        strcpy(this->nombre,nombre);
+        strcpy(this->nombre, nombre);
         error = 0;
     }
     return error;
@@ -195,10 +245,9 @@ int jugador_setAltura(eJugador* this, float altura)
 
 //--------------- GETTERS -----------------------
 
-int jugador_getId(eJugador* this,int* id)
+int jugador_getId(eJugador* this, int* id)
 {
     int error = 1;
-
     if(this != NULL && id !=NULL)
     {
         *id = this->id;
@@ -208,24 +257,24 @@ int jugador_getId(eJugador* this,int* id)
 }
 
 
-int jugador_getNombre(eJugador* this,char* nombre)
+int jugador_getNombre(eJugador* this, char* nombre)
 {
     int error = 1;
     if(this != NULL && nombre !=NULL)
     {
-        strcpy(nombre,this->nombre);
+        strcpy(nombre, this->nombre);
         error = 0;
     }
     return error;
 }
 
 
-int jugador_getPosicion(eJugador* this,char* posicion)
+int jugador_getPosicion(eJugador* this, char* posicion)
 {
     int error = 1;
     if(this != NULL && posicion !=NULL)
     {
-        strcpy(posicion,this->posicion);
+        strcpy(posicion, this->posicion);
         error = 0;
     }
     return error;
